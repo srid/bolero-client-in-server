@@ -19,22 +19,17 @@ type Startup() =
         services.AddMvc().AddRazorRuntimeCompilation() |> ignore
         services.AddServerSideBlazor() |> ignore
         services
-            .AddBoleroHost()
-#if DEBUG
-            .AddHotReload(templateDir = __SOURCE_DIRECTORY__ + "/../Yak.Client")
-#endif
+            .AddBoleroHost(server=true)
         |> ignore
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     member this.Configure(app: IApplicationBuilder, env: IWebHostEnvironment) =
         app
+            .UseDeveloperExceptionPage()
             .UseStaticFiles()
             .UseRouting()
             .UseBlazorFrameworkFiles()
             .UseEndpoints(fun endpoints ->
-#if DEBUG
-                endpoints.UseHotReload()
-#endif
                 endpoints.MapBlazorHub() |> ignore
                 endpoints.MapFallbackToPage("/_Host") |> ignore)
         |> ignore
