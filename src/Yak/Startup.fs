@@ -1,4 +1,4 @@
-namespace Yak.Server
+namespace Yak
 
 open Microsoft.AspNetCore
 open Microsoft.AspNetCore.Authentication.Cookies

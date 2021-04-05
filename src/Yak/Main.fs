@@ -1,4 +1,4 @@
-module Yak.Client.Main
+module Yak.Main
 
 open Elmish
 open Bolero
