@@ -10,6 +10,7 @@ open Bolero.Remoting.Server
 open Bolero.Server.RazorHost
 open Yak
 open Bolero.Templating.Server
+open Microsoft.AspNetCore.Mvc
 
 type Startup() =
 
@@ -18,8 +19,10 @@ type Startup() =
     member this.ConfigureServices(services: IServiceCollection) =
         services.AddMvc().AddRazorRuntimeCompilation() |> ignore
         services.AddServerSideBlazor() |> ignore
-        services
-            .AddBoleroHost(server=true)
+        services .AddBoleroHost(server=true)
+#if DEBUG
+          .AddHotReload(templateDir = __SOURCE_DIRECTORY__)
+#endif
         |> ignore
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
