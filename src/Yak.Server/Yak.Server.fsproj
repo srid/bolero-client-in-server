@@ -10,10 +10,8 @@
   <ItemGroup>
     <PackageReference Include="Bolero" Version="0.*" />
     <PackageReference Include="Bolero.Server" Version="0.*" />
-    <PackageReference Include="Bolero.Build" Version="0.*" />
     <PackageReference Include="Bolero.HotReload.Server" Version="0.*" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.*" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.*" />
   </ItemGroup>
 </Project>
