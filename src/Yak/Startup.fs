@@ -1,16 +1,12 @@
 namespace Yak
 
 open Microsoft.AspNetCore
-open Microsoft.AspNetCore.Authentication.Cookies
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.DependencyInjection
 open Bolero
-open Bolero.Remoting.Server
 open Bolero.Server.RazorHost
-open Yak
 open Bolero.Templating.Server
-open Microsoft.AspNetCore.Mvc
 
 type Startup() =
 
