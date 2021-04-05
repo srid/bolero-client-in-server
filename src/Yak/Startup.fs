@@ -28,6 +28,9 @@ type Startup() =
             .UseRouting()
             .UseBlazorFrameworkFiles()
             .UseEndpoints(fun endpoints ->
+#if DEBUG 
+                endpoints.UseHotReload()
+#endif
                 endpoints.MapBlazorHub() |> ignore
                 endpoints.MapFallbackToPage("/_Host") |> ignore)
         |> ignore
